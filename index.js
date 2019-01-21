@@ -5,13 +5,15 @@ const PORT = 8124;
 
 http.createServer((req, res) => {
   let name = require('url').parse(req.url,true).query.name;
-  
+
   switch (name) {
     case undefined:
       name = 'world';
+      res.writeHead(200, {'Content-Type': 'text/plain'})
+      res.end(`Hello ${name}`);
       break;
     case 'burningbird':
-      let file = 'assets/phoenix.png';
+      const file = 'assets/phoenix.png';
       fs.stat(file, (err,stat) => {
         if(err) {
           console.log(err);
