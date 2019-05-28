@@ -1,19 +1,20 @@
-// const http = require('http');
-// const fs = require('fs');
+const http = require('http');
+const fs = require('fs');
 
-// const PORT = 8124;
+const PORT = 8124;
 
-// process.stdin.setEncoding('utf8');
-//   process.stdin.on('readable', () => {
-//     const input = process.stdin.read();
-//     if(input !== null) {
-//       process.stdout.write(input);
-//       const command = input.trim();
-//       if(command === 'exit') {
-//         process.exit(0);
-//       }
-//     }
-//   });
+process.stdin.setEncoding('utf8');
+  process.stdin.on('readable', () => {
+    const input = process.stdin.read();
+    if(input !== null) {
+      process.stdout.write('You typed: ')
+      process.stdout.write(input);
+      const command = input.trim();
+      if(command === 'exit') {
+        process.exit(0);
+      }
+    }
+  });
 
 // http.createServer((req, res) => {
 //   let name = require('url').parse(req.url,true).query.name;
