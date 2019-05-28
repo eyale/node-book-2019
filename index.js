@@ -1,6 +1,5 @@
 const http = require("http");
 const fs = require("fs");
-
 const PORT = 8124;
 
 process.stdin.setEncoding("utf8");
